@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>All Employees</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="accordion" id="accordionExample">
+
+        <div class="card">
+            <div class="card-header" id="headingOne" style="background-color: #00AA9E;">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed text-white" type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Umumiy holda tishli g'ildiraklarning qutbdagi yeyilish tezligi:
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="a" class="col-sm-8 col-form-label text-right">Deformatsiyalangan
+                                        hajm:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="b" class="col-sm-8 col-form-label text-right">Tutashuv yuzasidagi
+                                        g'adr-budrlarning umumiy soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="c" class="col-sm-8 col-form-label text-right">Yeyilish
+                                        koeffitsiyenti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="d" class="col-sm-8 col-form-label text-right">Shestrna (g'ildirak)ning
+                                        aylanishlar chastotasi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="e" class="col-sm-8 col-form-label text-right">Qayta deformatsiyalanish
+                                        ehtimoli:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="e">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="f" class="col-sm-8 col-form-label text-right">Deformatsiyalangan
+                                        sirtning ko'ndalang kesim yuzasi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="f">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="g" class="col-sm-8 col-form-label text-right">Deformatsiyalar yuzasini
+                                        buzilishiga olib keluvchi sikllar soni.(shestrna/g'ildirak)</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="g">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4 offset-2">
+                                <h3>Natija: <span class="badge badge-secondary" id="result1">0 sds</span></h3>
+
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-lg" id="calcFun1">Hisoblash</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingTwo" style="background-color: #00AA9E;">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed  text-white" type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+                            style="background-color: #00AA9E;">
+                        Ishqalanish sirtlarning keltirilgan egrilik radyusi:
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="alert alert-primary" role="alert">
+                                    Kiritilingan tishlar soni
+                                </div>
+                                <div class="form-group row">
+                                    <label for="a2" class="col-sm-8 col-form-label text-right">Shestirnaning
+                                        tishlar</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-primary" role="alert">
+                                    Sirtinig kiritilingan radyusi
+                                </div>
+                                <div class="form-group row">
+                                    <label for="c2" class="col-sm-8 col-form-label text-right">Tishlar soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="b2" class="col-sm-8 col-form-label text-right">G'ildirakning tishlar
+                                        soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="d2" class="col-sm-8 col-form-label text-right">Ulashish moduli:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4>Natija: <span class="badge badge-secondary" , id="result2">0</span></h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-primary btn-lg" id="calcFun22">Hisoblash
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4>Natija: <span class="badge badge-secondary" , id="result22">0</span></h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-primary btn-lg" id="calcFun222">Hisoblash
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingThree" style="background-color: #00AA9E;">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed text-white" type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+                        Bir g'adir-budirlik bilan metalning deformatsiyalangan hajmi:
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                 data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="a3" class="col-sm-8 col-form-label text-right">Tutashuv
+                                        kuchlari:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="b3" class="col-sm-8 col-form-label text-right">Sirtning kiritilingan
+                                        radyusi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="c3" class="col-sm-8 col-form-label text-right">Elastik
+                                        doimiyligi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="d3" class="col-sm-8 col-form-label text-right">Deformatsiya
+                                        koeffitsiyenti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="e3" class="col-sm-8 col-form-label text-right">Keltirilgan elastiklik
+                                        moduli:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="e3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="f3" class="col-sm-8 col-form-label text-right">Materialning oqish
+                                        chegarasi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="f3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4 offset-2">
+                                <h3>Natija: <span class="badge badge-secondary" id="result3">0</span></h3>
+
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-lg" id="calcFun3">Hisoblash</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingFour" style="background-color: #00AA9E;">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed text-white" type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Dumalash ishqalanish sohasining tutashish maydoni:
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="a4" class="col-sm-8 col-form-label text-right">Tutashuv
+                                        kuchlari:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a4">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="b4" class="col-sm-8 col-form-label text-right">G'ildirak tishi
+                                        uzunligi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="c4" class="col-sm-8 col-form-label text-right">Sirtning kiritilgan
+                                        radiusi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c4">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="d4" class="col-sm-8 col-form-label text-right">Puasson
+                                        koeffitsienti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="e4" class="col-sm-8 col-form-label text-right">Keltirilgan elastiklik
+                                        moduli:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="e4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4 offset-2">
+                                <h3>Natija: <span class="badge badge-secondary" id="result4">0</span></h3>
+
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-lg" id="calcFun4">Hisoblash</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingFive" style="background-color: #00AA9E;">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed text-white" type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Ishqalanish sirtini qayta deformatsiyalanish elementlari:
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="a5" class="col-sm-8 col-form-label text-right">Tutashuv
+                                        kuchlari:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a5">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="b5" class="col-sm-8 col-form-label text-right">Sirtning kiritilgan
+                                        radiusi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="c5" class="col-sm-8 col-form-label text-right">Uzatishlari
+                                        soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c5">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="d5" class="col-sm-8 col-form-label text-right">G'ildirakning tishlari
+                                        uzunligi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="e5" class="col-sm-8 col-form-label text-right">Deformatsia
+                                        koeffitsienti</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="e5">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="f5" class="col-sm-8 col-form-label text-right">Materialning oqish
+                                        chegarasi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="f5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="g5" class="col-sm-8 col-form-label text-right">Keltirilgan elastik
+                                        moduli: </label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="g5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4 offset-2">
+                                <h3>Natija: <span class="badge badge-secondary" id="result5">0</span></h3>
+
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-lg" id="calcFun5">Hisoblash</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingSix" style="background-color: #00AA9E;">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed text-white" type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Tutashish yuzasida joylashgan g'adir-budirlikning umumiy soni:
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="a6" class="col-sm-8 col-form-label text-right">G'ildirak tishining
+                                        uzunligi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="b6" class="col-sm-8 col-form-label text-right">Deformatsiya
+                                        koefitsienti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="c6" class="col-sm-8 col-form-label text-right">Materialning oqish
+                                        chegarasi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="d6" class="col-sm-8 col-form-label text-right">Keltirilgan
+                                        elastiklik moduli:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="g6" class="col-sm-8 col-form-label text-right">Tutashuv
+                                        kuchlari:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="g6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="e6" class="col-sm-8 col-form-label text-right">Sirtning kiritilingan
+                                        radiusi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="e6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4 offset-2">
+                                <h3>Natija: <span class="badge badge-secondary" id="result6">0</span></h3>
+
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-lg" id="calcFun6">Hisoblash</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingSeven" style="background-color: #00AA9E;">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed  text-white" type="button"
+                            data-toggle="collapse"
+                            data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven"
+                            style="background-color: #00AA9E;">
+                        Ishqalanish qutbidagi shestrna tishlarining yeyilish tezligi:
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="alert alert-primary" role="alert">
+                                    Yetaklovchi shestrna uchun (Shestrna)
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="a7" class="col-sm-8 col-form-label text-right">Tutashuvchi
+                                        kuchlar:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="b7" class="col-sm-8 col-form-label text-right">Sirtning kiritilgan
+                                        radyusi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="c7" class="col-sm-8 col-form-label text-right">Elastiklik
+                                        doimiysi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="d7" class="col-sm-8 col-form-label text-right">Yeyilish
+                                        koeffitsienti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="e7" class="col-sm-8 col-form-label text-right">Shestrnani
+                                        aylanishlar chastotasi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="e7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="f7" class="col-sm-8 col-form-label text-right">Lelturiy elastiklik
+                                        moduli:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="f7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="g7" class="col-sm-8 col-form-label text-right">Uzatishlar
+                                        soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="g7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="h7" class="col-sm-8 col-form-label text-right">Deformatsiya
+                                        koeffitsienti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="h7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="i7" class="col-sm-8 col-form-label text-right">Tutashuvchi
+                                        kuchlar:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="i7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="j7" class="col-sm-8 col-form-label text-right">G'ildirak tishining
+                                        uzunligi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="j7">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="k7" class="col-sm-8 col-form-label text-right">Deformatsiyalar
+                                        yuzani buzishiga olib keluvchi shestrnalar soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="k7">
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn btn-primary btn-lg" id="calcFun7">
+                                                Hisoblash
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h4>Natija: <span class="badge badge-secondary" id="result7">0</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="alert alert-primary" role="alert">
+                                    Yetaklanuvchi shestrna uchun (G'ildirak)
+                                </div>
+                                <div class="form-group row">
+                                    <label for="a77" class="col-sm-8 col-form-label text-right">Tutashuvchi
+                                        kuchlar:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="a77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="b77" class="col-sm-8 col-form-label text-right">Sirtning kiritilgan
+                                        radyusi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="b77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="c77" class="col-sm-8 col-form-label text-right">Elastiklik
+                                        doimiysi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="c77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="d77" class="col-sm-8 col-form-label text-right">Yeyilish
+                                        koeffitsienti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="d77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="e77" class="col-sm-8 col-form-label text-right">Shestrnani
+                                        aylanishlar chastotasi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="e77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="f77" class="col-sm-8 col-form-label text-right">Lelturiy elastiklik
+                                        moduli:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="f77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="g77" class="col-sm-8 col-form-label text-right">Uzatishlar
+                                        soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="g77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="h77" class="col-sm-8 col-form-label text-right">Deformatsiya
+                                        koeffitsienti:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="h77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="i77" class="col-sm-8 col-form-label text-right">Tutashuvchi
+                                        kuchlar:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="i77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="j77" class="col-sm-8 col-form-label text-right">G'ildirak tishining
+                                        uzunligi:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="j77">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="k77" class="col-sm-8 col-form-label text-right">Deformatsiyalar
+                                        yuzani buzishiga olib keluvchi shestrnalar soni:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="k77">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-primary btn-lg" id="calcFun77">
+                                                    Hisoblash
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4>Natija: <span class="badge badge-secondary" id="result77">0</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script type="application/javascript">
+
+    $("#calcFun1").click(function () {
+        let a = $("#a").val()
+        let b = $("#b").val()
+        let c = $("#c").val()
+        let d = $("#d").val()
+        let e = $("#e").val()
+        let f = $("#f").val()
+        let g = $("#g").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc1?aaa=" + a + "&bbb=" + b + "&ccc=" + c + "&ddd=" + d + "&eee=" + e + "&fff=" + f + "&ggg=" + g,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result1").empty().append(response + " mm/soat");
+            }
+        });
+    })
+
+    $("#calcFun22").click(function () {
+        let a = $("#a2").val()
+        let b = $("#b2").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc2?a2=" + a + "&b2=" + b,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result2").empty().append(response + " ");
+            }
+        });
+    })
+
+    $("#calcFun222").click(function () {
+        let c = $("#c2").val()
+        let d = $("#d2").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc22?c2=" + c + "&d2=" + d,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result22").empty().append(response + " ");
+            }
+        });
+    })
+
+    $("#calcFun3").click(function () {
+        let a = $("#a3").val()
+        let b = $("#b3").val()
+        let c = $("#c3").val()
+        let d = $("#d3").val()
+        let e = $("#e3").val()
+        let f = $("#f3").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc3?aaa=" + a + "&bbb=" + b + "&ccc=" + c + "&ddd=" + d + "&eee=" + e + "&fff=" + f,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result3").empty().append(response + " мм <sup>3</sup>");
+            }
+        });
+    })
+
+    $("#calcFun4").click(function () {
+        let a = $("#a4").val()
+        let b = $("#b4").val()
+        let c = $("#c4").val()
+        let d = $("#d4").val()
+        let e = $("#e4").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc4?aaa=" + a + "&bbb=" + b + "&ccc=" + c + "&ddd=" + d + "&eee=" + e,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result4").empty().append(response + " мм");
+            }
+        });
+    })
+
+    $("#calcFun5").click(function () {
+        let a = $("#a5").val()
+        let b = $("#b5").val()
+        let c = $("#c5").val()
+        let d = $("#d5").val()
+        let e = $("#e5").val()
+        let f = $("#f5").val()
+        let g = $("#g5").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc5?aaa=" + a + "&bbb=" + b + "&ccc=" + c + "&ddd=" + d + "&eee=" + e + "&fff=" + f + "&ggg=" + g,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result5").empty().append(response);
+            }
+        });
+    })
+
+    $("#calcFun6").click(function () {
+        let a = $("#a6").val()
+        let b = $("#b6").val()
+        let c = $("#c6").val()
+        let d = $("#d6").val()
+        let g = $("#g6").val()
+        let e = $("#e6").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc6?aaa=" + a + "&bbb=" + b + "&ccc=" + c + "&ddd=" + d + "&ggg=" + g + "&eee=" + e,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result6").empty().append(response);
+            }
+        });
+    })
+
+    $("#calcFun7").click(function () {
+        let a = $("#a7").val()
+        let b = $("#b7").val()
+        let c = $("#c7").val()
+        let d = $("#d7").val()
+        let e = $("#e7").val()
+        let f = $("#f7").val()
+        let g = $("#g7").val()
+        let h = $("#h7").val()
+        let i = $("#i7").val()
+        let j = $("#j7").val()
+        let k = $("#k7").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc7?aaa=" + a + "&bbb=" + b + "&ccc=" + c + "&ddd=" + d + "&eee=" + e + "&fff=" + f + "&ggg=" + g + "&hhh=" + h + "&iii=" + i + "&jjj=" + j + "&kkk=" + k,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result7").empty().append(response + " mm/soat");
+            }
+        });
+    })
+
+    $("#calcFun77").click(function () {
+        let a = $("#a77").val()
+        let b = $("#b77").val()
+        let c = $("#c77").val()
+        let d = $("#d77").val()
+        let e = $("#e77").val()
+        let f = $("#f77").val()
+        let g = $("#g77").val()
+        let h = $("#h77").val()
+        let i = $("#i77").val()
+        let j = $("#j77").val()
+        let k = $("#k77").val()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/calc77?aaa=" + a + "&bbb=" + b + "&ccc=" + c + "&ddd=" + d + "&eee=" + e + "&fff=" + f + "&ggg=" + g + "&hhh=" + h + "&iii=" + i + "&jjj=" + j + "&kkk=" + k,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                $("#result77").empty().append(response + " mm/soat");
+            }
+        });
+    })
+
+</script>
+</body>
+
+</html>
